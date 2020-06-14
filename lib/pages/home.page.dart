@@ -33,7 +33,7 @@ class _HomePageState extends State<HomePage> {
           _completed
             ? Success(
               result: _resultText,
-              reset: () {},
+              reset: reset,
             ):
           SubmitForm(
             maskAlc: _maskAlc,
@@ -73,7 +73,13 @@ class _HomePageState extends State<HomePage> {
         _completed = true;
         })
     });
-    
-    
   }
-}
+    reset() {
+      setState(() {
+       _maskGas = new MoneyMaskedTextController();
+        _maskAlc = new MoneyMaskedTextController();
+        _completed = false;
+        _busy = false; 
+      });       
+    } 
+  }
