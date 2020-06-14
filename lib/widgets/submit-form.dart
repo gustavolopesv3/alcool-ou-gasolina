@@ -38,7 +38,7 @@ class SubmitForm extends StatelessWidget {
           ),
           child: Input(
             label: "Alcool",
-            ctrl: maskGas,
+            ctrl: maskAlc,
           ),
         ),
 
