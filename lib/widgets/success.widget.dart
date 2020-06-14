@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'loading-button.widget.dart';
 
-class Success extends StatelessWidget {
+class Success extends StatefulWidget {
   var result = '';
   Function reset;
 
@@ -11,6 +11,11 @@ class Success extends StatelessWidget {
     @required this.reset,
   });
 
+  @override
+  _SuccessState createState() => _SuccessState();
+}
+
+class _SuccessState extends State<Success> {
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -24,7 +29,7 @@ class Success extends StatelessWidget {
                 SizedBox(height: 50,
                 ),
                 Text(
-                  result,
+                  widget.result,
                   style: TextStyle(
                     color: Theme.of(context).primaryColor,
                     fontSize: 40,
@@ -37,7 +42,7 @@ class Success extends StatelessWidget {
                 ),
                 LoadingButton(
                 bisy: false,
-                func: reset,
+                func: widget.reset,
                 text: 'CALCULAR NOVAMENTE',
                 invert: true,
           ),

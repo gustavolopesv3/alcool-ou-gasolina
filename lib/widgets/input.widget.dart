@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
 
 
-class Input extends StatelessWidget {
+class Input extends StatefulWidget {
   var label = "";
   var ctrl = new MoneyMaskedTextController();
 
@@ -12,6 +12,11 @@ class Input extends StatelessWidget {
   });
 
   @override
+  _InputState createState() => _InputState();
+}
+
+class _InputState extends State<Input> {
+  @override
   Widget build(BuildContext context) {
     return Row(
             children: <Widget>[
@@ -19,7 +24,7 @@ class Input extends StatelessWidget {
                 width: 100,
                 alignment: Alignment.centerRight,
                 child: Text(
-                  label,
+                  widget.label,
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 35,
@@ -33,7 +38,7 @@ class Input extends StatelessWidget {
               Expanded(
                 child:
                   TextFormField(
-                    controller: ctrl,
+                    controller: widget.ctrl,
                     keyboardType: TextInputType.number,
                     style: TextStyle(
                       color: Colors.white,

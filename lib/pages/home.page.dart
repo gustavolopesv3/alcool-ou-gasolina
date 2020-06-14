@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:alcool_ou_gasolina/widgets/logo.widget.dart';
 import 'package:alcool_ou_gasolina/widgets/submit-form.dart';
 import 'package:alcool_ou_gasolina/widgets/success.widget.dart';
